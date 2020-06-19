@@ -11,4 +11,11 @@ class TableTest < Minitest::Test
     table = Table.new(astroid_details)
     assert_instance_of Table, table
   end
+
+  def test_it_can_create_column_header_and_divider
+    astroid_details = NearEarthObjects.find_neos_by_date('2019-03-30')
+    table = Table.new(astroid_details)
+    assert_equal '+-------------------+----------+----------------------+', table.divider
+    assert_equal '', table.header
+  end
 end
