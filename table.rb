@@ -10,6 +10,10 @@ class Table
     "+-#{@column_data.map { |_,col| "-"*col[:width] }.join('-+-') }-+"
   end
 
+  def header
+    "| #{ @column_data.map { |_,col| col[:label].ljust(col[:width]) }.join(' | ') } |"
+  end
+
   def column_data
     @column_labels.each_with_object({}) do |(col, label), hash|
       hash[col] = {
