@@ -7,9 +7,9 @@ print ">>"
 
 date = gets.chomp
 astroid_details = NearEarthObjects.find_neos_by_date(date)
-astroid_list = astroid_details[:astroid_list]
-total_number_of_astroids = astroid_details[:total_number_of_astroids]
-largest_astroid = astroid_details[:biggest_astroid]
+astroid_list = astroid_details.details[:astroid_list]
+total_number_of_astroids = astroid_details.details[:total_number_of_astroids]
+largest_astroid = astroid_details.details[:biggest_astroid]
 
 column_labels = { name: "Name", diameter: "Diameter", miss_distance: "Missed The Earth By:" }
 column_data = column_labels.each_with_object({}) do |(col, label), hash|
