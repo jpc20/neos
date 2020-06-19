@@ -12,17 +12,6 @@ total_number_of_astroids = astroid_details.details[:total_number_of_astroids]
 largest_astroid = astroid_details.details[:biggest_astroid]
 
 
-
-
-def format_row_data(row_data, column_info)
-  row = row_data.keys.map { |key| row_data[key].ljust(column_info[key][:width]) }.join(' | ')
-  puts "| #{row} |"
-end
-
-def create_rows(astroid_data, column_info)
-  astroid_data.each { |astroid| format_row_data(astroid, column_info) }
-end
-
 formated_date = DateTime.parse(date).strftime("%A %b %d, %Y")
 puts "______________________________________________________________________________"
 puts "On #{formated_date}, there were #{total_number_of_astroids} objects that almost collided with the earth."

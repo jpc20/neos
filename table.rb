@@ -22,4 +22,13 @@ class Table
     end
   end
 
+  def format_row_data(row_data, column_info)
+    row = row_data.keys.map { |key| row_data[key].ljust(column_info[key][:width]) }.join(' | ')
+    puts "| #{row} |"
+  end
+
+  def create_rows
+    @astroid_details.details[:astroid_list].each { |astroid| format_row_data(astroid, @column_data) }
+  end
+
 end
